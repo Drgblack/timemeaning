@@ -169,7 +169,31 @@ useEffect(() => {
               </span>
             </button>
 
-            <div className="mx-2 lg:mx-3"><div id="google_translate_element" /></div>
+            <div className="flex items-center gap-2">
+  <div id="google_translate_element" />
+  <button
+    onClick={() => {
+      const select = document.querySelector('.goog-te-combo') as HTMLSelectElement
+      if (select) {
+        select.value = 'en'
+        select.dispatchEvent(new Event('change'))
+      }
+    }}
+    style={{
+      fontSize: '11px',
+      fontFamily: 'IBM Plex Mono, monospace',
+      color: '#c8922a',
+      background: 'transparent',
+      border: '1px solid rgba(200,146,42,0.4)',
+      borderRadius: '4px',
+      padding: '3px 8px',
+      cursor: 'pointer',
+      whiteSpace: 'nowrap',
+    }}
+  >
+    EN
+  </button>
+</div>
             
             {/* Divider */}
             <span className="hidden lg:block w-px h-4 bg-white/[0.12] mx-6" />
