@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
+import AdSlot from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "Why international teams miss meetings — TimeMeaning",
@@ -22,6 +23,8 @@ export default function Article() {
             Why international teams miss meetings
           </h1>
         </header>
+
+        <AdSlot slot="insights-top" />
 
         <div className="space-y-6 text-foreground/90 leading-relaxed">
           <section>
@@ -150,6 +153,8 @@ export default function Article() {
             </p>
           </section>
         </div>
+
+        <AdSlot slot="insights-bottom" />
 
         {/* Related link */}
         <aside className="mt-12 pt-6 border-t border-border">

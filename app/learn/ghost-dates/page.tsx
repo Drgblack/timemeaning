@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
 import { ShareButtons } from "@/components/share-buttons";
+import AdSlot from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "Ghost Dates: Calendar Reforms and Missing Days — TimeMeaning Learning Centre",
@@ -23,6 +24,8 @@ export default function GhostDatesArticlePage() {
             Throughout history, entire days have been deleted from calendars. These "ghost dates" never existed — and can cause subtle bugs in historical calculations.
           </p>
         </header>
+
+        <AdSlot slot="learn-top" />
 
         <div className="prose prose-neutral max-w-none">
           <div className="p-6 bg-surface border border-border rounded-md mb-8">
@@ -56,6 +59,8 @@ export default function GhostDatesArticlePage() {
             Every spring, when clocks spring forward for Daylight Saving Time, one hour is skipped entirely. In the US, times between 02:00 and 02:59 on the second Sunday of March do not exist. These "ghost hours" can cause bugs in scheduling systems and log analysis.
           </p>
         </div>
+
+        <AdSlot slot="learn-bottom" />
 
         <ShareButtons 
           label="SHARE THIS ARTICLE" 

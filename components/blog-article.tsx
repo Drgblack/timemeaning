@@ -108,7 +108,7 @@ export function BlogArticle({
         </header>
         
         {/* Ad slot below headline */}
-        <AdSlot slot="blog-headline" format="leaderboard" />
+        <AdSlot slot="blog-top" format="leaderboard" />
 
         {/* Article body with custom typography */}
         <div 
@@ -120,6 +120,9 @@ export function BlogArticle({
         >
           {children}
         </div>
+
+        {/* Bottom ad slot before share/related footer */}
+        <AdSlot slot="blog-bottom" format="rectangle" />
 
         {/* Article footer */}
         <footer className="mt-12">

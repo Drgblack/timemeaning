@@ -5,6 +5,7 @@ import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
 import { ShareButtons } from "@/components/share-buttons";
 import { cities, findCity, formatOffset, getLocalHour, type CityData } from "@/lib/city-timezones";
+import AdSlot from "@/components/AdSlot";
 
 // Get live UTC offset for a city using browser's Intl API
 function getLiveOffset(timezone: string): number {
@@ -160,6 +161,8 @@ export default function OverlapPage() {
         <p className="text-lg text-text-secondary mb-8 leading-relaxed">
           Which cities on your team are doing the most antisocial hours so meetings can happen?
         </p>
+
+        <AdSlot slot="tool-mid" />
 
         {/* City selector */}
         <div className="mb-6">

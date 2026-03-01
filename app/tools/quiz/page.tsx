@@ -5,6 +5,7 @@ import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
 import { ShareButtons } from "@/components/share-buttons";
 import { JsonLd, generateSoftwareApplicationSchema, generateBreadcrumbSchema } from "@/components/json-ld";
+import AdSlot from "@/components/AdSlot";
 
 interface Question {
   id: number;
@@ -250,6 +251,8 @@ export default function QuizPage() {
             ← Back to Tools
           </Link>
 
+          <AdSlot slot="tool-mid" />
+
           <div className="bg-[#0f0f0d] border-2 border-primary rounded-md p-8 text-center">
             <div className="font-mono text-5xl text-primary mb-6">
               READY?
@@ -296,6 +299,8 @@ export default function QuizPage() {
           >
             ← Back to Tools
           </Link>
+
+          <AdSlot slot="tool-mid" />
 
           <div className="bg-[#0f0f0d] border-2 border-primary rounded-md p-8 text-center mb-8">
             <div className="font-serif text-6xl text-primary mb-4">
@@ -401,6 +406,8 @@ export default function QuizPage() {
         >
           ← Back to Tools
         </Link>
+
+        <AdSlot slot="tool-mid" />
 
         {/* Top bar */}
         <div className="flex items-center justify-between mb-4">

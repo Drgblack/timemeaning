@@ -10,6 +10,7 @@ export default function MarchGapInsightPage() {
   return (
     <LearnArticle
       title="Three weeks in March when transatlantic meetings silently shift"
+      adSlotPrefix="insights"
       date="3 min read"
     >
       <p>

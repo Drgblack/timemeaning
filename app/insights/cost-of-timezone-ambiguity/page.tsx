@@ -10,6 +10,7 @@ export default function CostInsightPage() {
   return (
     <LearnArticle
       title="The measurable cost of timezone ambiguity in distributed teams"
+      adSlotPrefix="insights"
       date="4 min read"
     >
       <p>

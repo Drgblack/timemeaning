@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { PageLayout } from "@/components/page-layout";
 import { ShareButtons } from "@/components/share-buttons";
 import { JsonLd, generateBreadcrumbSchema } from "@/components/json-ld";
+import AdSlot from "@/components/AdSlot";
 
 function LiveStatusChip({ slug, label, timezone, neverDST }: { slug: string; label: string; timezone: string; neverDST?: boolean }) {
   const [isDST, setIsDST] = useState<boolean | null>(null);
@@ -167,6 +168,8 @@ export default function ToolsPage() {
         </p>
         <div className="mt-6 h-px w-24" style={{ backgroundColor: 'rgba(200, 146, 42, 0.5)' }} />
       </header>
+
+      <AdSlot slot="tool-mid" />
 
       {/* Section 1: For Teams */}
       <section className="mb-12">

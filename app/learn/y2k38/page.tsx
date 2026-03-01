@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
 import { ShareButtons } from "@/components/share-buttons";
+import AdSlot from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "Y2K38: The 2038 Problem — TimeMeaning Learning Centre",
@@ -23,6 +24,8 @@ export default function Y2K38ArticlePage() {
             Understanding why 32-bit Unix time runs out on 19 January 2038 — and what it means for legacy systems.
           </p>
         </header>
+
+        <AdSlot slot="learn-top" />
 
         <div className="prose prose-neutral max-w-none">
           <div className="p-6 bg-surface border border-border rounded-md mb-8">
@@ -54,6 +57,8 @@ export default function Y2K38ArticlePage() {
             Modern systems use 64-bit integers for time storage, which extends the range to approximately 292 billion years. Most operating systems, programming languages, and databases have already migrated. The risk lies in forgotten legacy systems, embedded devices, and data stored in old formats.
           </p>
         </div>
+
+        <AdSlot slot="learn-bottom" />
 
         <ShareButtons 
           label="SHARE THIS ARTICLE" 

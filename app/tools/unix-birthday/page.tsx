@@ -5,6 +5,7 @@ import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
 import { ShareButtons } from "@/components/share-buttons";
 import { MAX_32BIT_SIGNED, get32BitPercentage } from "@/lib/y2k38";
+import AdSlot from "@/components/AdSlot";
 
 // Historical events with Unix timestamps
 const HISTORICAL_EVENTS: Record<number, string> = {
@@ -182,6 +183,8 @@ export default function UnixBirthdayPage() {
           Every moment since 1 January 1970 has a unique number. Find yours.
         </p>
       </header>
+
+      <AdSlot slot="tool-mid" />
 
       {/* Explainer */}
       <div className="mb-8 p-5 bg-surface border border-border rounded-md">

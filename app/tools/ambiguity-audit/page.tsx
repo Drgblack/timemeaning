@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
 import { ShareButtons } from "@/components/share-buttons";
+import AdSlot from "@/components/AdSlot";
 
 type Abbreviation = "CST" | "IST" | "EST" | "BST" | "AST" | "GMT" | "UTC" | "Other";
 
@@ -205,6 +206,8 @@ export default function AmbiguityAuditPage() {
         <p className="text-lg text-text-secondary mb-8 leading-relaxed">
           Three inputs. One risk score. How close is your team to a timezone disaster?
         </p>
+
+        <AdSlot slot="tool-mid" />
 
         {/* Inputs */}
         <div className="space-y-8 mb-10">

@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
 import { ShareButtons } from "@/components/share-buttons";
+import AdSlot from "@/components/AdSlot";
 
 // Constants - using exact values for precision
 const SPEED_OF_LIGHT = 299792458; // m/s (exact SI definition)
@@ -149,6 +150,8 @@ export default function TimeDilationPage() {
           Time passes at a different rate depending on your velocity and altitude. This is not science fiction — it is what GPS satellites have to correct for every day.
         </p>
       </header>
+
+      <AdSlot slot="tool-mid" />
 
       {/* Explainer */}
       <div className="prose-tm font-sans mb-10">

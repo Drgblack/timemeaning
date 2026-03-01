@@ -5,6 +5,7 @@ import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
 import { ShareButtons } from "@/components/share-buttons";
 import { getTransitionsInRange, getStableRegions, type DSTTransition, type RegionDST } from "@/lib/dst-data";
+import AdSlot from "@/components/AdSlot";
 
 function formatDate(dateStr: string): string {
   const date = new Date(dateStr + "T00:00:00");
@@ -189,6 +190,8 @@ export default function DSTMapPage() {
         <p className="text-lg text-text-secondary mb-4 leading-relaxed">
           Which regions are changing their clocks in the next 14 days — and what that means for your standing meetings.
         </p>
+
+        <AdSlot slot="tool-mid" />
         
         {/* Live UTC display */}
         <p className="font-mono text-sm text-primary mb-8">

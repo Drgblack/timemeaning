@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
 import { ShareButtons } from "@/components/share-buttons";
+import AdSlot from "@/components/AdSlot";
 
 type Currency = "GBP" | "EUR" | "USD";
 
@@ -53,6 +54,8 @@ export default function MeetingCostPage() {
         <p className="text-lg text-text-secondary mb-8 leading-relaxed">
           How much is timezone confusion costing your organisation each year?
         </p>
+
+        <AdSlot slot="tool-mid" />
 
         {/* Inputs */}
         <div className="space-y-8 mb-10">

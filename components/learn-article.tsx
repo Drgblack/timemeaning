@@ -29,6 +29,7 @@ interface LearnArticleProps {
   section?: SectionLabel;
   readTime?: string;
   verifiedDate?: string;
+  adSlotPrefix?: "learn" | "insights";
   // Backward compatibility for older call sites.
   date?: string;
   datePublished?: string; // ISO format YYYY-MM-DD
@@ -45,6 +46,7 @@ export function LearnArticle({
   section,
   readTime,
   verifiedDate,
+  adSlotPrefix = "learn",
   date,
   datePublished = "2026-01-15",
   keyFacts,
@@ -144,7 +146,7 @@ export function LearnArticle({
             </header>
             
             {/* Ad slot below headline */}
-            <AdSlot slot="learn-headline" format="leaderboard" />
+            <AdSlot slot={`${adSlotPrefix}-top`} format="leaderboard" />
 
             {/* Key facts box - appears near the top for data-heavy articles */}
             {keyFacts && keyFacts.length > 0 && (
@@ -182,6 +184,9 @@ export function LearnArticle({
             >
               {children}
             </div>
+
+            {/* Bottom ad slot before footer/share */}
+            <AdSlot slot={`${adSlotPrefix}-bottom`} format="rectangle" />
 
             {/* Article footer */}
             <footer className="mt-12">

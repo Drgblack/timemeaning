@@ -7,6 +7,7 @@ import { Search } from "lucide-react";
 import { PageLayout } from "@/components/page-layout";
 import { ShareButtons } from "@/components/share-buttons";
 import { searchAbbreviations, isAmbiguous, type AbbreviationData } from "@/lib/timezone-abbreviations";
+import AdSlot from "@/components/AdSlot";
 
 // Calculate max spread between meanings
 function calculateMaxSpread(data: AbbreviationData): { hours: number; formatted: string } | null {
@@ -111,6 +112,8 @@ function LookupContent() {
           What does IST, CST, BST, or EST actually mean? Every interpretation, every UTC offset.
         </p>
       </header>
+
+      <AdSlot slot="tool-mid" />
 
       {/* Input - full width, large 56px height on mobile */}
       <div className="max-w-md mx-auto mb-10 px-4 sm:px-0">

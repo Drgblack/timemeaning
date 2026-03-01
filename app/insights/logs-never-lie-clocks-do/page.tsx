@@ -10,6 +10,7 @@ export default function LogsInsightPage() {
   return (
     <LearnArticle
       title="Log files never lie — but the clocks that generate them sometimes do"
+      adSlotPrefix="insights"
       date="5 min read"
     >
       <p>

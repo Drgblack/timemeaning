@@ -10,6 +10,7 @@ export default function ZuluInsightPage() {
   return (
     <LearnArticle
       title="Why aviation adopted Zulu time — and why civilian teams should too"
+      adSlotPrefix="insights"
       date="3 min read"
     >
       <p>

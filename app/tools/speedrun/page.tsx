@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
 import { ShareButtons } from "@/components/share-buttons";
+import AdSlot from "@/components/AdSlot";
 
 interface Question {
   id: number;
@@ -269,6 +270,8 @@ export default function SpeedrunPage() {
           We'll show you a time reference. You interpret it. Then we'll show you how long we took.
         </p>
       </header>
+
+      <AdSlot slot="tool-mid" />
 
       {/* Game area */}
       <div className="min-h-[400px]">

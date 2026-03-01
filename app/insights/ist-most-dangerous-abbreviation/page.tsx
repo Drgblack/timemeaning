@@ -10,6 +10,7 @@ export default function ISTInsightPage() {
   return (
     <LearnArticle
       title="IST is the most dangerous timezone abbreviation in global business"
+      adSlotPrefix="insights"
       date="4 min read"
     >
       <p>

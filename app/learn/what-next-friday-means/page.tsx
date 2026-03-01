@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
+import AdSlot from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "What 'Next Friday' Means in Different Contexts — TimeMeaning",
@@ -30,6 +31,8 @@ export default function ArticlePage() {
           Relative time expressions like 'next Friday' are interpreted
           differently depending on when and where they are spoken.
         </p>
+
+        <AdSlot slot="learn-top" />
 
         <section className="mb-10">
           <h2 className="font-serif text-xl text-foreground font-medium mb-4">
@@ -182,7 +185,10 @@ export default function ArticlePage() {
           </p>
         </section>
 
+        <AdSlot slot="learn-bottom" />
+
         <section className="p-5 bg-secondary/50 rounded-md">
+
           <p className="text-sm text-muted-foreground">
             <strong className="text-foreground">Related:</strong>{" "}
             <Link
@@ -204,3 +210,4 @@ export default function ArticlePage() {
     </PageLayout>
   );
 }
+
