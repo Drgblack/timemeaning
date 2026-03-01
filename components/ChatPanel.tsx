@@ -1,6 +1,7 @@
 'use client';
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
+import ReactMarkdown from 'react-markdown';
 import { CHAT_CONFIG } from '@/lib/chatConfig';
 
 interface Message {
@@ -216,9 +217,35 @@ export default function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
                 lineHeight: '1.6',
                 color: '#e8e4de',
                 fontFamily: 'var(--font-sans)',
-                whiteSpace: 'pre-wrap',
+                whiteSpace: message.role === 'user' ? 'pre-wrap' : 'normal',
               }}>
-                {message.content}
+                {message.role === 'assistant' ? (
+                  <ReactMarkdown
+                    components={{
+                      p: ({ node: _node, ...props }) => <p style={{ margin: 0 }} {...props} />,
+                      ul: ({ node: _node, ...props }) => <ul style={{ margin: '0.5em 0', paddingLeft: '1.2em' }} {...props} />,
+                      ol: ({ node: _node, ...props }) => <ol style={{ margin: '0.5em 0', paddingLeft: '1.2em' }} {...props} />,
+                      li: ({ node: _node, ...props }) => <li style={{ margin: '0.2em 0' }} {...props} />,
+                      code: ({ node: _node, ...props }) => (
+                        <code
+                          style={{
+                            background: '#1a1a18',
+                            border: '1px solid #3a3530',
+                            borderRadius: '4px',
+                            padding: '0.1em 0.3em',
+                            fontFamily: 'monospace',
+                            fontSize: '12px',
+                          }}
+                          {...props}
+                        />
+                      ),
+                    }}
+                  >
+                    {message.content}
+                  </ReactMarkdown>
+                ) : (
+                  message.content
+                )}
               </div>
               {message.role === 'assistant' && modelLabel(message.model)}
             </div>
