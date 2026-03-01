@@ -607,3 +607,19 @@ body.translated-rtl {
   background: none !important;
   box-shadow: none !important;
 }
+
+/* Google Translate dropdown z-index and pointer-event fixes */
+.goog-te-menu-frame,
+.goog-te-menu2,
+.goog-te-menu2-item {
+  z-index: 99999 !important;
+}
+
+#google_translate_element * {
+  pointer-events: auto !important;
+}
+
+.goog-te-gadget-simple {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
