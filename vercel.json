@@ -1,0 +1,12 @@
+{
+  "framework": "nextjs",
+  "regions": ["lhr1", "iad1"],
+  "functions": {
+    "app/api/chat/route.ts": {
+      "maxDuration": 30
+    },
+    "app/api/og/route.ts": {
+      "maxDuration": 10
+    }
+  }
+}

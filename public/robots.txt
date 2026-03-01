@@ -1,0 +1,14 @@
+# TimeMeaning robots.txt
+# https://timemeaning.com
+
+User-agent: *
+Allow: /
+
+# Disallow dynamic result pages (not useful for search indexing)
+Disallow: /r/
+
+# Disallow API spec (for registered developers only)
+Disallow: /developers/spec
+
+# Sitemap location
+Sitemap: https://timemeaning.com/sitemap.xml
