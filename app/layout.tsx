@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { DM_Serif_Display, Plus_Jakarta_Sans, IBM_Plex_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
-import Script from 'next/script';
 import { ThemeProvider } from '@/lib/theme/context';
 import { CookieConsentProvider } from '@/components/cookie-consent';
 import { DebugDiagnostic } from '@/components/debug-diagnostic';

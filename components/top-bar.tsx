@@ -26,31 +26,30 @@ export function TopBar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMacOS, setIsMacOS] = useState(false);
-useEffect(() => {
-  // Remove any existing Google Translate script to prevent duplicates
-  const existingScript = document.getElementById('google-translate-widget')
-  if (existingScript) return // Already loaded
+  const [currentLang, setCurrentLang] = useState("en");
 
-  // Define the callback
-  ;(window as any).googleTranslateElementInit = function () {
-    new (window as any).google.translate.TranslateElement(
-      {
-        pageLanguage: 'en',
-        includedLanguages: 'de,fr,es,zh-CN,zh-TW,ja,pt,nl,it,pl,ar',
-        layout: 0, // SIMPLE layout
-        autoDisplay: false,
-      },
-      'google_translate_element'
-    )
-  }
+  useEffect(() => {
+    const checkLang = () => {
+      // Google Translate sets a cookie called googtrans
+      const cookies = document.cookie.split(";");
+      const gtCookie = cookies.find((c) => c.trim().startsWith("googtrans="));
+      if (gtCookie) {
+        const lang = gtCookie.split("/").pop()?.trim();
+        if (lang && lang !== "en") {
+          setCurrentLang(lang);
+          return;
+        }
+      }
+      setCurrentLang("en");
+    };
 
-  // Inject the script
-  const script = document.createElement('script')
-  script.id = 'google-translate-widget'
-  script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
-  script.async = true
-  document.head.appendChild(script)
-}, [])
+    checkLang();
+    const interval = setInterval(checkLang, 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   // Detect Mac on mount
   useEffect(() => {
     setIsMacOS(isMac());
@@ -110,6 +109,87 @@ useEffect(() => {
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
   }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    (window as any).googleTranslateElementInit = function () {
+      new (window as any).google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "de,fr,es,zh-CN,zh-TW,ja,pt,nl,it,pl,ar",
+          layout: 0,
+          autoDisplay: false,
+        },
+        "google_translate_element"
+      );
+    };
+
+    const clearTranslateCookieAndReload = () => {
+      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname;
+      window.location.reload();
+    };
+
+    const handleComboChange = (e: Event) => {
+      const target = e.target as HTMLSelectElement;
+      if (target.value === "en") {
+        clearTranslateCookieAndReload();
+      }
+    };
+
+    let attachedSelect: HTMLSelectElement | null = null;
+
+    const addEnglishOption = () => {
+      const select = document.querySelector(".goog-te-combo") as HTMLSelectElement | null;
+      if (!select) return false;
+
+      // Check if English option already exists
+      const hasEnglish = Array.from(select.options).some((o) => o.value === "en");
+      if (!hasEnglish) {
+        // Create English option and insert at top
+        const englishOption = document.createElement("option");
+        englishOption.value = "en";
+        englishOption.text = "English";
+        select.insertBefore(englishOption, select.firstChild);
+      }
+
+      if (attachedSelect !== select) {
+        if (attachedSelect) {
+          attachedSelect.removeEventListener("change", handleComboChange);
+        }
+        select.addEventListener("change", handleComboChange);
+        attachedSelect = select;
+      }
+
+      return true;
+    };
+
+    const existingScript = document.getElementById("google-translate-widget");
+    if (!existingScript) {
+      const script = document.createElement("script");
+      script.id = "google-translate-widget";
+      script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      script.async = true;
+      document.head.appendChild(script);
+    }
+
+    // Poll until widget renders then add English
+    const pollInterval = setInterval(() => {
+      if (addEnglishOption()) {
+        clearInterval(pollInterval);
+      }
+    }, 200);
+
+    // Clean up after 10 seconds max
+    const pollTimeout = setTimeout(() => clearInterval(pollInterval), 10000);
+
+    return () => {
+      clearInterval(pollInterval);
+      clearTimeout(pollTimeout);
+      if (attachedSelect) {
+        attachedSelect.removeEventListener("change", handleComboChange);
+      }
+    };
+  }, []);
 
   // Check if current path is active
   const isActive = (href: string) => {
@@ -171,28 +251,28 @@ useEffect(() => {
 
             <div className="flex items-center gap-2">
   <div id="google_translate_element" />
-  <button
-    onClick={() => {
-      const select = document.querySelector('.goog-te-combo') as HTMLSelectElement
-      if (select) {
-        select.value = 'en'
-        select.dispatchEvent(new Event('change'))
-      }
-    }}
-    style={{
-      fontSize: '11px',
-      fontFamily: 'IBM Plex Mono, monospace',
-      color: '#c8922a',
-      background: 'transparent',
-      border: '1px solid rgba(200,146,42,0.4)',
-      borderRadius: '4px',
-      padding: '3px 8px',
-      cursor: 'pointer',
-      whiteSpace: 'nowrap',
-    }}
-  >
-    EN
-  </button>
+  {currentLang !== "en" && (
+    <button
+      onClick={() => {
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname;
+        window.location.reload();
+      }}
+      style={{
+        fontSize: "11px",
+        fontFamily: "IBM Plex Mono, monospace",
+        color: "#c8922a",
+        background: "transparent",
+        border: "1px solid rgba(200,146,42,0.4)",
+        borderRadius: "4px",
+        padding: "3px 8px",
+        cursor: "pointer",
+        whiteSpace: "nowrap",
+      }}
+    >
+      EN
+    </button>
+  )}
 </div>
             
             {/* Divider */}
@@ -302,5 +382,3 @@ useEffect(() => {
     </>
   );
 }
-
-
