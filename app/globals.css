@@ -623,3 +623,8 @@ body.translated-rtl {
   pointer-events: auto !important;
   cursor: pointer !important;
 }
+
+/* Google Translate z-index fix */
+.goog-te-menu-frame, .goog-te-menu2 { z-index: 99999 !important; }
+#google_translate_element * { pointer-events: auto !important; }
+.goog-te-gadget-simple { pointer-events: auto !important; cursor: pointer !important; }
