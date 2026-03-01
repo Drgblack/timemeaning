@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ambiguousAbbreviations, getAbbreviationData } from "@/lib/timezone-abbreviations";
+import { ambiguousAbbreviations } from "@/lib/timezone-abbreviations";
 import { generateHash } from "@/lib/easter-eggs";
 import { storeResult } from "@/lib/result-store";
 import { getOverflowMargin, getUnixEpochInfo, MAX_32BIT_SIGNED } from "@/lib/y2k38";

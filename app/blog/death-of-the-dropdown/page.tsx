@@ -9,8 +9,12 @@ export const metadata: Metadata = {
 export default function DeathOfDropdownPage() {
   return (
     <BlogArticle
-      title="The Death of the Dropdown: Why \"Select Your City\" Is a UX Failure"
-      date="February 2026"
+      title={'The Death of the Dropdown: Why "Select Your City" Is a UX Failure'}
+      description="The standard timezone dropdown was designed for settings panels, not for resolving ambiguous input from human-written text."
+      slug="death-of-the-dropdown"
+      date="November 2025"
+      datePublished="2025-11-01"
+      readTime="5 min"
     >
       <p>
         The standard interface for timezone input has not changed meaningfully in twenty years. It is a dropdown — usually labelled "Select your timezone" or "Select your city" — containing a scrollable list of several hundred options organised either alphabetically or by UTC offset.

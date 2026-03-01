@@ -9,8 +9,12 @@ export const metadata: Metadata = {
 export default function StopAskingPage() {
   return (
     <BlogArticle
-      title="Stop Asking \"What Time Is It There?\" — Meaning Matters More Than Conversion"
-      date="February 2026"
+      title={'Stop Asking "What Time Is It There?" — Meaning Matters More Than Conversion'}
+      description="Conversion tells you the equivalent of a time you already understand. Interpretation tells you what a time means when you are not yet sure."
+      slug="stop-asking-what-time"
+      date="January 2026"
+      datePublished="2026-01-20"
+      readTime="5 min"
     >
       <p>
         "What time is it in Tokyo right now?" is a question with a clean answer. It is a lookup. The answer is a number, and it will be correct until the minute changes.

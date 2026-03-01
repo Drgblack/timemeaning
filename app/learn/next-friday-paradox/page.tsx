@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function NextFridayParadoxPage() {
   return (
     <LearnArticle
-      title="The \"Next Friday\" Paradox"
+      title={'The "Next Friday" Paradox'}
       description="Why relative dates are a scheduling trap."
       section="Foundations"
       readTime="5 min"

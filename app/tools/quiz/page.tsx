@@ -216,7 +216,7 @@ export default function QuizPage() {
     }, 1500);
   };
 
-  const score = answers.reduce((acc, answer, index) => {
+  const score = answers.reduce<number>((acc, answer, index) => {
     if (answer === null || !questions[index]) return acc;
     return questions[index].options[answer].correct ? acc + 1 : acc;
   }, 0);

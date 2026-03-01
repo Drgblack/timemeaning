@@ -10,7 +10,11 @@ export default function LogFileLimboPage() {
   return (
     <BlogArticle
       title="Log File Limbo: The Hidden Tax of UTC Timestamps in a Crisis"
-      date="February 2026"
+      description="The cognitive cost of converting UTC log timestamps to local time during a severity-one incident is real and measurable."
+      slug="log-file-limbo"
+      date="January 2026"
+      datePublished="2026-01-10"
+      readTime="6 min"
     >
       <p>
         At 2:47am UTC, the first error appears in the logs. By 2:51 UTC, the cascade has started. The on-call engineer is paged at what their phone displays as 10:47pm — they are in San Francisco, where it is still Wednesday evening. Their counterpart in Berlin, who joins the call ninety seconds later, is working from what their clock shows as Thursday morning at 3:47am.

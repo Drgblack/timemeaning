@@ -24,11 +24,13 @@ interface RelatedArticle {
 
 interface LearnArticleProps {
   title: string;
-  description: string;
-  slug: string;
-  section: SectionLabel;
-  readTime: string;
-  verifiedDate: string;
+  description?: string;
+  slug?: string;
+  section?: SectionLabel;
+  readTime?: string;
+  verifiedDate?: string;
+  // Backward compatibility for older call sites.
+  date?: string;
   datePublished?: string; // ISO format YYYY-MM-DD
   keyFacts?: string[];
   relatedTool?: RelatedTool;
@@ -43,16 +45,29 @@ export function LearnArticle({
   section,
   readTime,
   verifiedDate,
+  date,
   datePublished = "2026-01-15",
   keyFacts,
   relatedTool,
   relatedArticles = [],
   children 
 }: LearnArticleProps) {
+  const effectiveDescription =
+    description ?? "Practical guidance for clear, unambiguous time communication.";
+  const effectiveSlug =
+    slug ??
+    title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  const effectiveSection = section ?? "Foundations";
+  const effectiveReadTime = (readTime ?? date ?? "5 min").replace(/\s*read$/i, "").trim();
+  const effectiveVerifiedDate = verifiedDate ?? "January 2026";
+
   const articleSchema = generateArticleSchema({
     title,
-    description,
-    slug,
+    description: effectiveDescription,
+    slug: effectiveSlug,
     datePublished,
     section: "learn"
   });
@@ -60,7 +75,7 @@ export function LearnArticle({
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "TimeMeaning", url: "https://timemeaning.com" },
     { name: "Learning Centre", url: "https://timemeaning.com/learn" },
-    { name: title, url: `https://timemeaning.com/learn/${slug}` }
+    { name: title, url: `https://timemeaning.com/learn/${effectiveSlug}` }
   ]);
 
   return (
@@ -95,7 +110,7 @@ export function LearnArticle({
                 className="text-[11px] uppercase tracking-wider block mb-4"
                 style={{ color: '#8a8278' }}
               >
-                {section}
+                {effectiveSection}
               </span>
               
               {/* Headline */}
@@ -110,17 +125,17 @@ export function LearnArticle({
                 className="text-lg leading-relaxed mb-4 dark:text-[#c8c0b0]"
                 style={{ color: '#6a6560' }}
               >
-                {description}
+                {effectiveDescription}
               </p>
               
               {/* Metadata line */}
               <div className="article-metadata flex items-center gap-2">
                 <span className="font-mono text-xs" style={{ color: '#c8922a' }}>
-                  {readTime} read
+                  {effectiveReadTime} read
                 </span>
                 <span className="text-muted-foreground">·</span>
                 <span className="verified-badge font-mono text-xs" style={{ color: '#c8922a' }}>
-                  Verified {verifiedDate}
+                  Verified {effectiveVerifiedDate}
                 </span>
               </div>
               

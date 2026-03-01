@@ -167,9 +167,9 @@ function SubSectionHeading({ id, children }: { id: string; children: React.React
   );
 }
 
-function Paragraph({ children }: { children: React.ReactNode }) {
+function Paragraph({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
   return (
-    <p style={{ fontSize: '14px', color: '#3a3530', lineHeight: 1.7, marginBottom: '16px' }}>
+    <p style={{ fontSize: '14px', color: '#3a3530', lineHeight: 1.7, marginBottom: '16px', ...style }}>
       {children}
     </p>
   );

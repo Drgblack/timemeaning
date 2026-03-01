@@ -10,7 +10,11 @@ export default function TimezoneAnxietyPage() {
   return (
     <BlogArticle
       title="Remote Work's Silent Productivity Killer: Timezone Anxiety"
-      date="February 2026"
+      description="A distributed team of twenty people can lose hundreds of hours per year to timezone double-checking — a problem that is invisible in productivity reports."
+      slug="timezone-anxiety"
+      date="December 2025"
+      datePublished="2025-12-15"
+      readTime="6 min"
     >
       <p>
         It takes approximately four minutes to double-check a timezone.

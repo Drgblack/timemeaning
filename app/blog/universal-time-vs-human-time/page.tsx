@@ -10,7 +10,11 @@ export default function UniversalVsHumanTimePage() {
   return (
     <BlogArticle
       title="Universal Time vs. Human Time: Why UTC and Natural Language Will Always Conflict"
-      date="February 2026"
+      description="Humans will continue to write 'next Tuesday morning' because it communicates what they mean. Machines will continue to require UTC. The gap will always need bridging."
+      slug="universal-time-vs-human-time"
+      date="November 2025"
+      datePublished="2025-11-15"
+      readTime="7 min"
     >
       <p>
         UTC is a perfect system for machines. It is a single, continuous count of seconds from a fixed reference point. It does not shift with seasons. It does not vary by location. Two events timestamped in UTC can be sequenced accurately regardless of where the systems that recorded them are located. For infrastructure, logging, and any application where time is being computed rather than communicated, UTC is correct.

@@ -7,13 +7,19 @@ interface ShareButtonsProps {
   shareText?: string;
   url?: string;
   pageTitle?: string;
+  // Backward compatibility for older call sites.
+  title?: string;
+  text?: string;
+  imageUrl?: string;
 }
 
 export function ShareButtons({ 
   label = "SHARE THIS PAGE", 
   shareText,
   url,
-  pageTitle 
+  pageTitle,
+  title,
+  text
 }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
 
@@ -23,8 +29,14 @@ export function ShareButtons({
   };
 
   const getShareText = () => {
-    if (shareText) return shareText;
-    if (pageTitle) return `"${pageTitle}" — from the TimeMeaning learning centre. timemeaning.com`;
+    const explicitText = shareText ?? text;
+    if (explicitText !== undefined) return explicitText;
+
+    const explicitTitle = pageTitle ?? title;
+    if (explicitTitle !== undefined) {
+      return `"${explicitTitle}" — from the TimeMeaning learning centre. timemeaning.com`;
+    }
+
     return "Check out this page on TimeMeaning";
   };
 

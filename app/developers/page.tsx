@@ -466,7 +466,6 @@ export default function APIPage() {
               
               <Link 
                 href="/developers/spec"
-                href="/developers/spec"
                 style={{ 
                   display: 'inline-block',
                   marginTop: '12px',

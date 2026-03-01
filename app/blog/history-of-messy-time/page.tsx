@@ -10,7 +10,11 @@ export default function HistoryOfMessyTimePage() {
   return (
     <BlogArticle
       title="The History of Messy Time: How Railways, Wars, and Politics Built the Timezone Map"
-      date="February 2026"
+      description="The timezone map is not a clean engineering artefact — it is a geological record of political decisions accumulated over 150 years."
+      slug="history-of-messy-time"
+      date="December 2025"
+      datePublished="2025-12-01"
+      readTime="9 min"
     >
       <p>
         Before railways, time was local. Every town set its clocks by the position of the sun, which meant that Bristol was ten minutes behind London, and Leeds was six minutes behind Birmingham. This was fine when the fastest way to travel between cities took several hours. It became a problem when trains started running timetables across hundreds of miles.
