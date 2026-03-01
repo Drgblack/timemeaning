@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @source "../components/**/*.tsx";
+@source "../app/**/*.tsx";
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark, .dark *));
@@ -579,4 +580,5 @@ body > .skiptranslate { display: none !important; }
   background: none !important;
   box-shadow: none !important;
 }
+
 
