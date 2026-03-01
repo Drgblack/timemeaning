@@ -173,6 +173,16 @@ export function Footer() {
             Contact
           </a>
         </nav>
+
+        <p style={{ 
+          fontSize: '11px', 
+          color: '#5a5550', 
+          marginTop: '16px',
+          textAlign: 'center' 
+        }}>
+          Machine translation powered by Google Translate. 
+          Timestamps, timezone data, and technical terms are not translated.
+        </p>
       </div>
     </footer>
   );

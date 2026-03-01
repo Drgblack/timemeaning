@@ -508,3 +508,102 @@
 [data-resolver-input]::placeholder {
   color: #6a6560;
 }
+
+/* Google Translate widget overrides */
+
+/* Prevent page jumping when translation activates */
+body {
+  top: 0 !important;
+  position: static !important;
+}
+
+body.translated-ltr,
+body.translated-rtl {
+  top: 0 !important;
+  position: static !important;
+}
+
+/* Hide the intrusive top banner Google inserts */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+.skiptranslate {
+  display: none !important;
+}
+
+/* Override the above for the actual widget element in our header */
+#google_translate_element .skiptranslate {
+  display: block !important;
+}
+
+/* Style the widget select dropdown to match TimeMeaning design */
+.goog-te-gadget-simple {
+  background-color: transparent !important;
+  border: 1px solid rgba(200, 146, 42, 0.4) !important;
+  border-radius: 4px !important;
+  padding: 3px 8px !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+}
+
+.goog-te-gadget-simple a.goog-te-menu-value {
+  color: #c8922a !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 12px !important;
+  text-decoration: none !important;
+  vertical-align: middle !important;
+}
+
+.goog-te-gadget-simple a.goog-te-menu-value:hover {
+  color: #d4a040 !important;
+}
+
+.goog-te-gadget-simple a.goog-te-menu-value span {
+  color: #c8922a !important;
+  border: none !important;
+}
+
+/* Hide Google branding image inside widget */
+.goog-te-gadget-simple img {
+  display: none !important;
+}
+
+/* Hide the arrow span that sometimes appears */
+.goog-te-gadget-simple .goog-te-menu-value span:last-child {
+  display: none !important;
+}
+
+/* Dark mode adjustments */
+.dark .goog-te-gadget-simple {
+  border-color: rgba(200, 146, 42, 0.3) !important;
+}
+
+/* Translation dropdown menu styling */
+.goog-te-menu2 {
+  border: 1px solid #3a3530 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+  max-height: 300px !important;
+  overflow-y: auto !important;
+}
+
+.goog-te-menu2-item div {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 13px !important;
+}
+
+.goog-te-menu2-item:hover div {
+  background-color: #f5e9cc !important;
+  color: #1a1a1a !important;
+}
+
+/* Prevent translated content from overflowing */
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}

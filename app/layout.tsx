@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { DM_Serif_Display, Plus_Jakarta_Sans, IBM_Plex_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
+import Script from 'next/script';
 import { ThemeProvider } from '@/lib/theme/context';
 import { CookieConsentProvider } from '@/components/cookie-consent';
 import { DebugDiagnostic } from '@/components/debug-diagnostic';
@@ -91,6 +92,29 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <Script
+          id="google-translate-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                  pageLanguage: 'en',
+                  includedLanguages: 'de,fr,es,zh-CN,zh-TW,ja,pt,nl,it,pl,ar',
+                  layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                  autoDisplay: false,
+                  multilanguagePage: false
+                }, 'google_translate_element');
+              }
+            `,
+          }}
+        />
+        <Script
+          id="google-translate-widget"
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="afterInteractive"
+        />
+
         <script
           dangerouslySetInnerHTML={{
             __html: `

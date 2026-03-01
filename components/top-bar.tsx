@@ -144,6 +144,12 @@ export function TopBar() {
                 Search ({searchShortcutHint})
               </span>
             </button>
+
+            {!isMobileMenuOpen && (
+              <div className="mx-2 lg:mx-3">
+                <div id="google_translate_element" />
+              </div>
+            )}
             
             {/* Divider */}
             <span className="hidden lg:block w-px h-4 bg-white/[0.12] mx-6" />
@@ -237,6 +243,12 @@ export function TopBar() {
               <span className="text-[#9a9590] text-[14px]">Theme</span>
               <ThemeToggle />
             </div>
+
+            {isMobileMenuOpen && (
+              <div className="px-4 pb-3">
+                <div id="google_translate_element" />
+              </div>
+            )}
             
             {/* Trust note */}
             <div className="px-4 py-3 border-t border-[#3a3530]">
