@@ -92,28 +92,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <Script
-          id="google-translate-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              function googleTranslateElementInit() {
-                new google.translate.TranslateElement({
-                  pageLanguage: 'en',
-                  includedLanguages: 'de,fr,es,zh-CN,zh-TW,ja,pt,nl,it,pl,ar',
-                  layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                  autoDisplay: false,
-                  multilanguagePage: false
-                }, 'google_translate_element');
-              }
-            `,
-          }}
-        />
-        <Script
-          id="google-translate-widget"
-          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-          strategy="lazyOnload"
-        />
+        
+        
 
         <script
           dangerouslySetInnerHTML={{
@@ -163,4 +143,7 @@ export default function RootLayout({
     </html>
   );
 }
+
+
+
 

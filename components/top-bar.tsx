@@ -26,7 +26,31 @@ export function TopBar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMacOS, setIsMacOS] = useState(false);
+useEffect(() => {
+  // Remove any existing Google Translate script to prevent duplicates
+  const existingScript = document.getElementById('google-translate-widget')
+  if (existingScript) return // Already loaded
 
+  // Define the callback
+  ;(window as any).googleTranslateElementInit = function () {
+    new (window as any).google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'de,fr,es,zh-CN,zh-TW,ja,pt,nl,it,pl,ar',
+        layout: 0, // SIMPLE layout
+        autoDisplay: false,
+      },
+      'google_translate_element'
+    )
+  }
+
+  // Inject the script
+  const script = document.createElement('script')
+  script.id = 'google-translate-widget'
+  script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+  script.async = true
+  document.head.appendChild(script)
+}, [])
   // Detect Mac on mount
   useEffect(() => {
     setIsMacOS(isMac());
@@ -145,11 +169,7 @@ export function TopBar() {
               </span>
             </button>
 
-            {!isMobileMenuOpen && (
-              <div className="mx-2 lg:mx-3">
-                <div id="google_translate_element" />
-              </div>
-            )}
+            <div className="mx-2 lg:mx-3"><div id="google_translate_element" /></div>
             
             {/* Divider */}
             <span className="hidden lg:block w-px h-4 bg-white/[0.12] mx-6" />
@@ -244,11 +264,7 @@ export function TopBar() {
               <ThemeToggle />
             </div>
 
-            {isMobileMenuOpen && (
-              <div className="px-4 pb-3">
-                <div id="google_translate_element" />
-              </div>
-            )}
+            
             
             {/* Trust note */}
             <div className="px-4 py-3 border-t border-[#3a3530]">
@@ -262,3 +278,5 @@ export function TopBar() {
     </>
   );
 }
+
+

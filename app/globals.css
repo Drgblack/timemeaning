@@ -628,3 +628,23 @@ body.translated-rtl {
 .goog-te-menu-frame, .goog-te-menu2 { z-index: 99999 !important; }
 #google_translate_element * { pointer-events: auto !important; }
 .goog-te-gadget-simple { pointer-events: auto !important; cursor: pointer !important; }
+
+/* Hide Powered by Google text */
+.goog-te-gadget {
+  font-size: 0 !important;
+}
+
+.goog-te-gadget > span,
+.goog-te-gadget a {
+  display: none !important;
+}
+
+.goog-te-gadget .goog-te-gadget-simple {
+  font-size: 12px !important;
+}
+
+/* Keep only the select element visible */
+.goog-logo-link,
+.goog-logo-link:hover {
+  display: none !important;
+}
