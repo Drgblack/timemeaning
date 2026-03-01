@@ -13,6 +13,9 @@ export function SeoContent() {
     "1709830800",
   ];
 
+  const chipClassName =
+    "font-mono text-[13px] cursor-pointer transition-colors bg-[#1a1a1a] text-[#f5f0e8] px-3 py-1.5 rounded-[20px] border border-[#3a3530] hover:border-[#c8922a] hover:text-[#c8922a]";
+
   return (
     <section aria-labelledby="understanding-time" className="mb-16">
       <h2 
@@ -63,22 +66,7 @@ export function SeoContent() {
           {naturalExamples.map((example, i) => (
             <span 
               key={i}
-              className="font-mono text-[13px] cursor-pointer transition-colors"
-              style={{
-                background: '#1a1a1a',
-                color: '#f5f0e8',
-                padding: '6px 12px',
-                borderRadius: '20px',
-                border: '1px solid #3a3530',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#c8922a';
-                e.currentTarget.style.color = '#c8922a';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#3a3530';
-                e.currentTarget.style.color = '#f5f0e8';
-              }}
+              className={chipClassName}
             >
               {example}
             </span>
@@ -87,22 +75,7 @@ export function SeoContent() {
           {technicalExamples.map((example, i) => (
             <span 
               key={`tech-${i}`}
-              className="font-mono text-[13px] cursor-pointer transition-colors"
-              style={{
-                background: '#1a1a1a',
-                color: '#f5f0e8',
-                padding: '6px 12px',
-                borderRadius: '20px',
-                border: '1px solid #3a3530',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#c8922a';
-                e.currentTarget.style.color = '#c8922a';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#3a3530';
-                e.currentTarget.style.color = '#f5f0e8';
-              }}
+              className={chipClassName}
             >
               {example}
             </span>
