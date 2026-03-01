@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
 import { ShareButtons } from "@/components/share-buttons";
 import AdSlot from "@/components/AdSlot";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "Ghost Dates: Calendar Reforms and Missing Days — TimeMeaning Learning Centre",
@@ -60,6 +61,8 @@ export default function GhostDatesArticlePage() {
           </p>
         </div>
 
+        <ArticleChatPrompt />
+
         <AdSlot slot="learn-bottom" />
 
         <ShareButtons 
@@ -76,3 +79,4 @@ export default function GhostDatesArticlePage() {
     </PageLayout>
   );
 }
+

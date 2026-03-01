@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle, TryItChip, CodeBlock } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "How to Specify Time in Legal Contracts — TimeMeaning Learning Centre",
@@ -96,6 +97,8 @@ interpreted as local time in London, United Kingdom
       <p>
         Have your legal counsel review time specifications specifically. Many contract templates use ambiguous phrasing that has never been tested in court — until it matters.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

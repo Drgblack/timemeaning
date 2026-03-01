@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { LearnArticle } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "Aviation Time: Zulu, UTC, and Why Pilots Never Use Local Time — TimeMeaning",
@@ -74,6 +75,8 @@ export default function AviationZuluTimePage() {
           TimeMeaning is not an aviation operations tool and should not be used as a substitute for certified flight operations software or regulatory guidance.
         </p>
       </footer>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

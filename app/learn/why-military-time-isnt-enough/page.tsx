@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "Why Military Time Isn't Enough: The 24-Hour Clock Solves AM/PM But Not Timezones — TimeMeaning",
@@ -40,6 +41,8 @@ export default function WhyMilitaryTimeIsntEnoughPage() {
           <span className="font-mono text-sm text-muted-foreground">"14:00"</span> is not.
         </p>
       </div>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

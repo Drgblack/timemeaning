@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle, TryItChip, CodeBlock, DirectAnswer } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "A Primer on Unix Timestamps — TimeMeaning Learning Centre",
@@ -94,6 +95,8 @@ export default function UnixTimestampPrimerPage() {
       <p>
         For APIs and databases, Unix time (in seconds or milliseconds) is often the safest choice. It requires no timezone context to interpret and compares trivially with arithmetic operators.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

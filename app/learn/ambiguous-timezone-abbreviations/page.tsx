@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { LearnArticle, DirectAnswer } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "The Glossary of Ambiguity: Every Timezone Abbreviation With More Than One Meaning — TimeMeaning",
@@ -199,6 +200,8 @@ export default function AmbiguousTimezoneAbbreviationsPage() {
       <p>
         This list is not exhaustive. New abbreviation collisions emerge when countries adopt or change their timezone designations. The IANA timezone database (the authoritative source used by most operating systems and programming languages) uses region/city identifiers — such as <span className="font-mono text-sm">America/Chicago</span> or <span className="font-mono text-sm">Asia/Kolkata</span> — precisely because abbreviations are not unique. When precision is required, use an IANA identifier or a UTC offset rather than an abbreviation.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

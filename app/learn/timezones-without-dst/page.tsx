@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "Timezones That Don't Observe DST: The Stable Regions and Why They Confuse Everyone Else — TimeMeaning",
@@ -73,6 +74,8 @@ export default function TimezonesWithoutDstPage() {
           <strong>The practical consequence:</strong> if you coordinate regularly with colleagues in Japan, India, China, or the Gulf states, your standing meeting times need to be reviewed every time <em>your</em> clocks change — not theirs.
         </p>
       </div>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "The Railway Time Revolution — TimeMeaning Learning Centre",
@@ -80,6 +81,8 @@ export default function RailwayTimeRevolutionPage() {
       <p>
         The irony is that today&apos;s timezone confusion — DST transitions, ambiguous abbreviations, regional variations — is a direct consequence of the political compromises made to implement that system. We solved one coordination problem and created many others.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

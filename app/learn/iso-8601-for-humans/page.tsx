@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle, DirectAnswer } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "Decoding ISO 8601 for Humans: What That Timestamp Actually Means — TimeMeaning",
@@ -97,6 +98,8 @@ export default function Iso8601ForHumansPage() {
       <p>
         ISO 8601 is the format to use when precision is required. API responses, log files, database records, and any time value that will be processed by software should use ISO 8601 with an explicit offset or Z. Human-written communication should include an ISO timestamp as a canonical reference alongside the human-readable version whenever the stakes are high.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

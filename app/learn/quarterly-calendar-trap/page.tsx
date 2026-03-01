@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle, TryItChip } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "The Quarterly Calendar Trap — TimeMeaning Learning Centre",
@@ -82,6 +83,8 @@ export default function QuarterlyCalendarTrapPage() {
       <p>
         For recurring reports, include a legend that maps your organisation&apos;s quarters to calendar months. Make the conversion obvious so readers do not need to guess.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

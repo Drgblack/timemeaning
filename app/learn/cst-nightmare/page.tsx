@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle, TryItChip } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "CST: A Case Study in Chaos — TimeMeaning Learning Centre",
@@ -96,6 +97,8 @@ export default function CstNightmarePage() {
       <p>
         If you must use an abbreviation, at least add the country: &ldquo;CST (US)&rdquo; or &ldquo;CST (China).&rdquo; This narrows the interpretation space significantly.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

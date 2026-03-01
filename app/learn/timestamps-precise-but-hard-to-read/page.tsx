@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
 import AdSlot from "@/components/AdSlot";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "Why Timestamps Are Precise but Hard to Read — TimeMeaning",
@@ -222,6 +223,8 @@ export default function ArticlePage() {
           </p>
         </section>
 
+        <ArticleChatPrompt />
+
         <AdSlot slot="learn-bottom" />
 
         <section className="p-5 bg-secondary/50 rounded-md">
@@ -247,4 +250,5 @@ export default function ArticlePage() {
     </PageLayout>
   );
 }
+
 

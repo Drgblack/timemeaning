@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { LearnArticle } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "The International Date Line Trap: When Your Flight Lands Yesterday — TimeMeaning",
@@ -78,6 +79,8 @@ Arrives: Honolulu (HNL) — Mon 9 Mar 22:00 HST`}</pre>
         </Link>{" "}
         and it will flag Date Line crossings explicitly, show the UTC equivalent for both endpoints, and confirm whether the date discrepancy is expected or anomalous.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

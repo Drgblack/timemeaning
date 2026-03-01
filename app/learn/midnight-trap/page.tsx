@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle, TryItChip } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "Midnight Is a Trap — TimeMeaning Learning Centre",
@@ -82,6 +83,8 @@ export default function MidnightTrapPage() {
       <p>
         The one-minute adjustment eliminates the midnight trap entirely.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

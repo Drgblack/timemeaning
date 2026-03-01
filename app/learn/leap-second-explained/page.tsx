@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle, CodeBlock } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "Leap Seconds Explained — TimeMeaning Learning Centre",
@@ -88,6 +89,8 @@ export default function LeapSecondExplainedPage() {
       <p>
         For now, if you maintain systems that care about subsecond precision, be aware that 30 June and 31 December may contain surprise seconds.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

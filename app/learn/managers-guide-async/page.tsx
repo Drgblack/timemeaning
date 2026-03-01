@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "The Manager's Guide to Async Coordination Across Timezones — TimeMeaning",
@@ -49,6 +50,8 @@ export default function ManagersGuideAsyncPage() {
       <p>
         If your team uses a recurring meeting template or a standard calendar invite format, include the UTC time and offset in the title or description by default. <span className="font-mono text-sm bg-muted px-1.5 py-0.5 rounded">"Weekly sync — Mondays 10:00 UTC (11:00 London / 06:00 New York / 19:00 Tokyo)"</span> as a standing calendar entry removes the need for anyone to recalculate.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

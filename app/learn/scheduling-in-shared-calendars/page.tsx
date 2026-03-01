@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle, TryItChip } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "Scheduling in Shared Calendars — TimeMeaning Learning Centre",
@@ -95,6 +96,8 @@ export default function SchedulingInSharedCalendarsPage() {
       <blockquote>
         Calendar apps hide complexity. This is usually good, but it means you cannot see when something will go wrong until it does. Be proactive about DST transitions and timezone changes.
       </blockquote>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

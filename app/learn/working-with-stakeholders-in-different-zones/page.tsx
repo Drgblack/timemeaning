@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle, TryItChip } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "Working with Stakeholders in Different Zones — TimeMeaning Learning Centre",
@@ -87,6 +88,8 @@ export default function WorkingWithStakeholdersPage() {
       <blockquote>
         The goal is not to find a time that works for everyone — that often does not exist. The goal is to make the trade-offs visible and rotate the burden fairly.
       </blockquote>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

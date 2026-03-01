@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
 import { ShareButtons } from "@/components/share-buttons";
 import AdSlot from "@/components/AdSlot";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "Y2K38: The 2038 Problem — TimeMeaning Learning Centre",
@@ -58,6 +59,8 @@ export default function Y2K38ArticlePage() {
           </p>
         </div>
 
+        <ArticleChatPrompt />
+
         <AdSlot slot="learn-bottom" />
 
         <ShareButtons 
@@ -74,3 +77,4 @@ export default function Y2K38ArticlePage() {
     </PageLayout>
   );
 }
+

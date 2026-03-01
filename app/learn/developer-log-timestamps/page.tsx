@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "The Developer's Handbook to Log Timestamps: Unix, ISO, RFC 3339, and How to Resolve Them — TimeMeaning",
@@ -74,6 +75,8 @@ export default function DeveloperLogTimestampsPage() {
         <p className="font-mono text-sm mb-0">RFC 3339 → same as ISO 8601 with offset</p>
         <p className="font-mono text-sm mb-0">Syslog (RFC 3164) → local time of originating system, timezone unknown</p>
       </div>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

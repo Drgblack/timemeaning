@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "What Is a UTC Offset and Why Is It More Reliable Than a Timezone Name? — TimeMeaning",
@@ -49,6 +50,8 @@ export default function UnderstandingUtcOffsetsPage() {
       <p>
         Use an explicit UTC offset any time you are communicating a time to someone in a different timezone and precision matters. Include the offset alongside the timezone name or city for maximum clarity: <span className="font-mono text-sm bg-muted px-1.5 py-0.5 rounded">"09:00 EST (UTC−5, New York)"</span>. In API design, log files, and database records, store times in UTC and convert to local time at display only.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

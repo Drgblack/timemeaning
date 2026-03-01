@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { LearnArticle } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "Nautical Time Zones: Why the High Seas Run on Different Rules — TimeMeaning",
@@ -69,6 +70,8 @@ export default function NauticalTimeZonesPage() {
       <p>
         The International Date Line flag in TimeMeaning will trigger when a time reference implies a date crossing — for example, &quot;ETA Tuesday 22:00 ship&apos;s time, departed Wednesday 09:00 ship&apos;s time&quot; — and explain whether the discrepancy is expected given the vessel&apos;s longitude.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

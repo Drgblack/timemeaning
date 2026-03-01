@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "How TimeMeaning Resolves a Time Reference: A Transparency Guide — TimeMeaning",
@@ -66,6 +67,8 @@ export default function HowTheResolverThinksPage() {
       <p>
         TimeMeaning does not use a general-purpose large language model to produce its output. The interpretation pipeline is deterministic — the same input will always produce the same output. The tool does not learn from pasted text, does not retain input between sessions, and does not use statistical inference to guess at ambiguous inputs. When something is ambiguous, it is flagged, not guessed.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

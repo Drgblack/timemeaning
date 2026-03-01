@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/lib/theme/context';
 import { CookieConsentProvider } from '@/components/cookie-consent';
 import { DebugDiagnostic } from '@/components/debug-diagnostic';
 import { AdSenseLoader } from '@/components/adsense-loader';
+import ChatButton from '@/components/ChatButton';
 import './globals.css';
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -138,6 +139,7 @@ export default function RootLayout({
           </CookieConsentProvider>
         </ThemeProvider>
         <Analytics />
+        <ChatButton />
       </body>
     </html>
   );

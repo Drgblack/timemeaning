@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { LearnArticle, TryItChip } from "@/components/learn-article";
 import { NextParadoxVisualiser } from "@/components/next-paradox-visualiser";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "The \"Next Friday\" Paradox — TimeMeaning Learning Centre",
@@ -77,6 +78,8 @@ export default function NextFridayParadoxPage() {
       <p>
         For recurring meetings, consider using ISO week notation: &ldquo;Friday of week 6&rdquo; is unambiguous if both parties understand ISO weeks.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

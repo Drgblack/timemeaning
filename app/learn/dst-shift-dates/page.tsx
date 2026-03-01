@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle, DirectAnswer } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "Understanding Daylight Saving Shift Dates: When the Clocks Change and Why It Matters — TimeMeaning",
@@ -90,6 +91,8 @@ export default function DstShiftDatesPage() {
       <p>
         The following major regions maintain a fixed UTC offset year-round: Japan (<span className="font-mono text-sm">UTC+9</span>), China (<span className="font-mono text-sm">UTC+8</span>), India (<span className="font-mono text-sm">UTC+5:30</span>), most of Africa, most of Southeast Asia, Iceland, and most of the Middle East. A full list is covered in the article on <a href="/learn/timezones-without-dst" className="text-primary hover:underline">timezones that don't observe DST</a>.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LearnArticle } from "@/components/learn-article";
+import ArticleChatPrompt from "@/components/ArticleChatPrompt";
 
 export const metadata: Metadata = {
   title: "How to Write a Bulletproof Time: Best Practices for Unambiguous Time References — TimeMeaning",
@@ -79,6 +80,8 @@ export default function BulletproofTimePage() {
       <p>
         When writing a bulletproof time is not practical — in a casual Slack message, for example — a shareable link from a time interpretation tool is an equivalent alternative. Paste the time into TimeMeaning, resolve it, and share the canonical link. The recipient sees the full interpretation with all assumptions stated, regardless of their location.
       </p>
+
+      <ArticleChatPrompt />
     </LearnArticle>
   );
 }
