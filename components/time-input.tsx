@@ -1,15 +1,21 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 interface TimeInputProps {
   onInput: (value: string) => void;
   onDecode: () => void;
+  isLoading?: boolean;
 }
 
-export function TimeInput({ onInput, onDecode }: TimeInputProps) {
+export function TimeInput({ onInput, onDecode, isLoading = false }: TimeInputProps) {
   const [value, setValue] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+  const onDecodeRef = useRef(onDecode);
+
+  useEffect(() => {
+    onDecodeRef.current = onDecode;
+  }, [onDecode]);
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -23,11 +29,11 @@ export function TimeInput({ onInput, onDecode }: TimeInputProps) {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (value.trim()) {
-        onDecode();
+        onDecodeRef.current();
       }
     }, 300);
     return () => clearTimeout(timer);
-  }, [value, onDecode]);
+  }, [value]);
 
   return (
     <div className="w-full max-w-[560px] mx-auto">
@@ -55,7 +61,7 @@ export function TimeInput({ onInput, onDecode }: TimeInputProps) {
       <div className="mt-4 flex justify-center">
         <button
           onClick={onDecode}
-          disabled={!value.trim()}
+          disabled={!value.trim() || isLoading}
           className="w-full sm:w-auto sm:min-w-[160px] min-h-[48px] px-8 py-3
             rounded-lg font-semibold text-[15px] text-white
             transition-transform duration-150 ease-out
@@ -69,7 +75,7 @@ export function TimeInput({ onInput, onDecode }: TimeInputProps) {
             borderTopColor: '#c8922a',
           }}
         >
-          Decode
+          {isLoading ? 'Interpreting...' : 'Decode'}
         </button>
       </div>
     </div>
